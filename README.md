@@ -1,66 +1,65 @@
+> [!WARNING]
+> This is a fork of the original [dmscripts](https://gitlab.com/dwt1/dmscripts.git) repository by Derek Taylor (aka distrotube).
+
+---
 
 ![dmscripts](https://gitlab.com/dwt1/dmscripts/raw/master/img/logo-1920x630.png "dmscripts")
 
 # Table of Contents
+
 1. [Dmenu Scripts](#dmscripts)
 2. [Important](#important)
-3. [Contributing](#contributing)	
-4. [Issues](#issues)	
+3. [Contributing](#contributing)
+4. [Issues](#issues)
 5. [Dependencies](#dependencies)
 6. [Installation](#installation)
 7. [Configuration](#configuration)
-	
 
 # dmscripts
 
-dmscripts originally began life as a collection of scripts designed to use dmenu, but not everyone wants to use dmenu as a launcher/menu.  So, dmscripts now works with rofi and fzf as well as dmenu.  For most scripts, simply pass the '-d', '-f' or '-r' options to select whether the script uses dmenu, fzf or rofi.  If no option is given to the script, it will default to using dmenu.
+dmscripts originally began life as a collection of scripts designed to use dmenu, but not everyone wants to use dmenu as a launcher/menu. So, dmscripts now works with rofi and fzf as well as dmenu. For most scripts, simply pass the '-d', '-f' or '-r' options to select whether the script uses dmenu, fzf or rofi. If no option is given to the script, it will default to using dmenu.
 
 The scripts included in this repo are:
 
-+ dm-bookman - Search your qutebrowser bookmarks, quickmarks and history urls.
-+ dm-colpick - Copy a color's hex value to your clipboard
-+ dm-confedit - Choose from a list of configuration files to edit.
-+ dm-dictionary - Simple dictionary script
-+ dm-documents - Searches for pdf files and opens them with the pdf viewer
-+ dm-hub - A hub from where you can run all the scripts from.
-+ dm-ip - Get IP of interface or external IP
-+ dm-kill - Search for a process to kill.
-+ dm-logout - Logout, shutdown, reboot or lock screen.
-+ dm-maim - A GUI to maim using dmenu.
-+ dm-man - Search for a manpage or get a random one.
-+ dm-music - Dmenu as your music player
-+ dm-note - Store multiple one-line texts or codes and copy one of them when needed.
-+ dm-pipewire-out-switcher - Switch default output for pipewire
-+ dm-radio - Choose between online radio stations with dmenu.
-+ dm-record - Records audio, video and webcam.
-+ dm-reddit - Dmenu as a reddit viewer using reddio. *STILL A WORK IN PROGRESS*
-+ dm-setbg - A wallpaper setting utility using dmenu, xwallpaper and sxiv
-+ dm-sounds - Choose an ambient background to play.
-+ dm-spellcheck - Script to check spellings
-+ dm-usbmount - mount/unmount usb drives using dmenu. No fancy daemon required
-+ dm-weather - Simple graphical weather app
-+ dm-websearch - Search various search engines (inspired by surfraw).
-+ dm-wifi - Connect to wifi using dmenu.
-+ dm-wiki - Search an offline copy of the Arch Wiki.
-+ dm-youtube - Youtube subscriptions without an account or the API tying you down.
-+ \_dm-helper.sh Helper scripts adding functionality to other scripts
+- dm-color - Copy a color's hex value to your clipboard
+- dm-dictionary - Simple dictionary script
+- dm-documents - Searches for pdf files and opens them with the pdf viewer
+- dm - A hub from where you can run all the scripts from.
+- dm-ip - Get IP of interface or external IP
+- dm-kill - Search for a process to kill.
+- dm-lights - A tool to manage your backlights.
+- dm-logout - Logout, shutdown, reboot or lock screen.
+- dm-maim - A GUI to maim using dmenu.
+- dm-man - Search for a manpage or get a random one.
+- dm-note - Store multiple one-line texts or codes and copy one of them when needed.
+- dm-record - Records audio, video and webcam.
+- dm-reddit - Dmenu as a reddit viewer using reddio. _STILL A WORK IN PROGRESS_
+- dm-setbg - A wallpaper setting utility using dmenu, xwallpaper and sxiv
+- dm-sounds - Choose an ambient background to play.
+- dm-spellcheck - Script to check spellings
+- dm-usbmount - mount/unmount usb drives using dmenu. No fancy daemon required
+- dm-weather - Simple graphical weather app
+- dm-websearch - Search various search engines (inspired by surfraw).
+- dm-wifi - Connect to wifi using dmenu.
+- dm-wiki - Search an offline copy of the Arch Wiki.
+- \_dm-helper.sh Helper scripts adding functionality to other scripts
 
 ![Screenshot of dmenu](https://gitlab.com/dwt1/dotfiles/raw/master/.screenshots/dmenu-distrotube01.png)
 
 # IMPORTANT!
 
-When we write scripts, we test with a default dmenu configuration (or DT's config). This means 
+When we write scripts, we test with a default dmenu configuration (or DT's config). This means
 potential issues with other patches or dmenu alternatives may be missed by us. Please feel free to
 patch the program yourself or see if you can figure out why the patch/program is incompatible and
 either take it upstream or fix your version.
 
 That being said, we are making an effort to improve compatibility with new software and technology
 like Wayland and dmenu alternatives however we need testers. Please write issues about Wayland
-support and support for dmenu alternatives or comment on existing issues releated. 
+support and support for dmenu alternatives or comment on existing issues releated.
 
 ## Patches to avoid:
 
-+ Case insensitive 
+- Case insensitive
 
 Case insensitive is a patch that removes the -i flag and makes insensitive casing the default
 behaviour, this needs to be reverted if you wish to use dmscripts in the default configuration.
@@ -79,7 +78,7 @@ See [ISSUES.md](ISSUES.md)
 
 # Dependencies
 
-Of course, dmenu is a dependency for all of these scripts.  To see the dependencies of each individual script, check the top commented block of text in each script. For installing you will need pandoc and, of course, git.
+Of course, dmenu is a dependency for all of these scripts. To see the dependencies of each individual script, check the top commented block of text in each script. For installing you will need pandoc and, of course, git.
 
 # Installation
 
@@ -88,16 +87,16 @@ Of course, dmenu is a dependency for all of these scripts.  To see the dependenc
 If you are using Arch, clone the repository then go through the manual build process to install the scripts. Run the following commands:
 
 ```bash
-$ git clone https://gitlab.com/dwt1/dmscripts.git
-$ cd dmscripts
-$ makepkg -cf
-$ sudo pacman -U *.pkg.tar.zst
+git clone https://gitlab.com/dwt1/dmscripts.git
+cd dmscripts
+makepkg -cf
+sudo pacman -U *.pkg.tar.zst
 ```
 
-Alternatively, you could install dmscripts from the AUR using an AUR helper such as yay:
+Alternatively, you could install dmscripts from the AUR using an AUR helper such as yay or paru:
 
 ```bash
-$ yay -S dmscripts-git
+paru -S dmscripts-git
 ```
 
 Once installed, the scripts should behave like any other command and can be run by typing the script's name.
@@ -109,10 +108,10 @@ NOTE: When installing dmscripts-git, you will see a list of Haskell dependencies
 All you need to do is clone this repository and run setup. Run the following commands:
 
 ```bash
-$ git clone https://gitlab.com/dwt1/dmscripts.git
-$ cd dmscripts
-$ sudo make clean build
-$ sudo make install
+git clone https://gitlab.com/dwt1/dmscripts.git
+cd dmscripts
+sudo make clean build
+sudo make install
 ```
 
 Once installed, the scripts should behave like any other command and can be run by typing the script's name. It is important to note however that the dependencies are not installed by default, that is up to YOU to do before installing.
@@ -121,36 +120,38 @@ NOTE: Some distributions require the Haskell programming language to be installe
 
 ## Non-installation
 
-If you wish to try the scripts without installing, you can use dm-hub:
+If you wish to try the scripts without installing, you can use dm:
 for the scripts to work you need to have the config-file in one of three locations:
-+ /etc/dmscripts/config
-+ ../config/config (path relative to scripts in git-repo)
-+ ~/.config/dmscripts/config
+
+- /etc/dmscripts/config
+- ../config/config (path relative to scripts in git-repo)
+- ~/.config/dmscripts/config
 
 ```bash
-$ bash /path/to/dm-hub
+bash /path/to/dm
 ```
 
 To run a script without using the hub:
 
 ```bash
-$ bash /path/to/script
+bash /path/to/script
 ```
 
 Or:
 
 ```bash
-$ ./path/to/script
+./path/to/script
 ```
 
 # Configuration
 
 Currently, configuration can be done in a few ways:
-+ copying config (from repo ./config/config or /etc/dmscripts/config if installed) to ~/.config/dmscripts/config (Recommended)
-+ Via the global config file `/etc/dmscripts/config` (will cause diff when updating)
-	+ Maintenance
-+ Via editing the source code (not recommended)
-	+ Changing the Config Location
+
+- copying config (from repo ./config/config or /etc/dmscripts/config if installed) to ~/.config/dmscripts/config (Recommended)
+- Via the global config file `/etc/dmscripts/config` (will cause diff when updating)
+  - Maintenance
+- Via editing the source code (not recommended)
+  - Changing the Config Location
 
 ## The Global Config
 
@@ -158,7 +159,7 @@ Currently only a "global" config is installed to `/etc/dmscripts/config`.
 To install a user-specific version of the config run the following command:
 
 ```bash
-$ cp -riv config/ "$HOME"/.config/dmscripts
+cp -riv config/ "$HOME"/.config/dmscripts
 ```
 
 The config file is a bash script however it is very simple to understand and several comments are left which explains what everything in the config file does. If you are still confused, a general word of advice that you should just copy one of the lines in the config and modify it to see what it does.
